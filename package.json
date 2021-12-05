@@ -1,0 +1,19 @@
+{
+  "name": "react-minimal",
+  "version": "1.0.0",
+  "description": "minimal setup for react",
+  "main": "index.js",
+  "author": "amaan-ahmad",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
+  "scripts": {
+    "start": "parcel public/index.html --open"
+  }
+}
