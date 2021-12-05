@@ -4,7 +4,8 @@ import App from "./src/App";
 import { ChakraProvider } from "@chakra-ui/react"
 const widgetDivs = document.querySelectorAll(".rezpond-widget");
 
-widgetDivs.forEach(div =>
+widgetDivs.forEach(div => {
+    div.classList.add("base")
     render(
         <React.StrictMode>
             <ChakraProvider>
@@ -13,5 +14,5 @@ widgetDivs.forEach(div =>
         </React.StrictMode>
         , div
     )
-
+}
 )
