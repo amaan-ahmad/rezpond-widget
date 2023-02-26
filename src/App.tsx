@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Drawer,
   DrawerHeader,
@@ -13,8 +13,18 @@ import {
 } from "@chakra-ui/react";
 import { CloseIcon } from "@chakra-ui/icons";
 import FeedbackForm from "./components/feedbackForm";
+import {backendService} from "./recoil/atom"
+import { useRecoilState } from "recoil";
+import { BackendService } from "./services"
+
 const App: React.FC<{ clientId: string }> = ({ clientId }) => {
+  const [backend, setBackend] = useRecoilState(backendService);
   const { onClose, onOpen, isOpen } = useDisclosure();
+
+  useEffect(() => {
+    setBackend(new BackendService(clientId));
+  }, [clientId, setBackend]);
+
   return (
     <>
       <div
