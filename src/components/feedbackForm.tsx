@@ -1,16 +1,14 @@
 import React, { useState } from "react";
 import { Textarea, Text, Button, Stack } from "@chakra-ui/react"
 import { isDev } from "../utils/env";
-import { useRecoilValue } from "recoil";
-import { backendService } from "../recoil/atom"; 
+import { backendService } from "../services";
 
 const FeedbackForm: React.FC<{ clientId: string }> = ({ clientId }) => {
     const dev = isDev();
     const [value, setValue] = useState<string>('');
-    const backend = useRecoilValue(backendService);
 
     const handleSubmit = () => {
-        backend.submitFeedback({
+        backendService.submitFeedback({
             text: value
         });
     }

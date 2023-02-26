@@ -1,13 +1,6 @@
 import { getFeedbackFormSettings, submitFeedback } from "./feedback";
 
-export class BackendService {
-    public readonly clientId: string;
-
-    constructor(clientId: string) {
-        this.clientId = clientId;
-        localStorage.setItem("rezpond-client-id", clientId);
-    }
-
+class BackendService {
     getFeedbackFormSettings(): Promise<FeedbackFormSettings> {
         return getFeedbackFormSettings();
     }
@@ -16,3 +9,5 @@ export class BackendService {
         return submitFeedback(feedback);
     }
 }
+
+export const backendService = new BackendService();

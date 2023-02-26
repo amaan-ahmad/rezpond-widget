@@ -26,7 +26,8 @@
   },
   "scripts": {
     "start": "parcel public/index.html --open",
-    "build:widget": "parcel build index.tsx --no-source-maps -d widget && cp build/static/css/*.css widget/index.css"
+    "build:widget": "parcel build widget.tsx --no-source-maps -d widget",
+    "start:widget": "parcel public/widget.html --open --port 1235"
   },
   "browerslist": [
     "since 2017-06"
